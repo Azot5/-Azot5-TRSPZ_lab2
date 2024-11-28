@@ -1,0 +1,184 @@
+{
+	"info": {
+		"name": "Expense Tracker API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User Endpoints",
+			"item": [
+				{
+					"name": "Create User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"name\": \"John Doe\" }"
+						},
+						"url": {
+							"raw": "{{base_url}}/user",
+							"host": [ "{{base_url}}" ],
+							"path": [ "user" ]
+						}
+					}
+				},
+				{
+					"name": "Get User",
+					"request": {
+						"method": "GET",
+						"url": {
+							"raw": "{{base_url}}/user/1",
+							"host": [ "{{base_url}}" ],
+							"path": [ "user", "1" ]
+						}
+					}
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"method": "DELETE",
+						"url": {
+							"raw": "{{base_url}}/user/1",
+							"host": [ "{{base_url}}" ],
+							"path": [ "user", "1" ]
+						}
+					}
+				},
+				{
+					"name": "Get All Users",
+					"request": {
+						"method": "GET",
+						"url": {
+							"raw": "{{base_url}}/users",
+							"host": [ "{{base_url}}" ],
+							"path": [ "users" ]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Category Endpoints",
+			"item": [
+				{
+					"name": "Create Category",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"name\": \"Groceries\" }"
+						},
+						"url": {
+							"raw": "{{base_url}}/category",
+							"host": [ "{{base_url}}" ],
+							"path": [ "category" ]
+						}
+					}
+				},
+				{
+					"name": "Get All Categories",
+					"request": {
+						"method": "GET",
+						"url": {
+							"raw": "{{base_url}}/category",
+							"host": [ "{{base_url}}" ],
+							"path": [ "category" ]
+						}
+					}
+				},
+				{
+					"name": "Delete Category",
+					"request": {
+						"method": "DELETE",
+						"url": {
+							"raw": "{{base_url}}/category/1",
+							"host": [ "{{base_url}}" ],
+							"path": [ "category", "1" ]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Record Endpoints",
+			"item": [
+				{
+					"name": "Create Record",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"user_id\": 1, \"category_id\": 1, \"amount\": 100.5 }"
+						},
+						"url": {
+							"raw": "{{base_url}}/record",
+							"host": [ "{{base_url}}" ],
+							"path": [ "record" ]
+						}
+					}
+				},
+				{
+					"name": "Get Record",
+					"request": {
+						"method": "GET",
+						"url": {
+							"raw": "{{base_url}}/record/1",
+							"host": [ "{{base_url}}" ],
+							"path": [ "record", "1" ]
+						}
+					}
+				},
+				{
+					"name": "Delete Record",
+					"request": {
+						"method": "DELETE",
+						"url": {
+							"raw": "{{base_url}}/record/1",
+							"host": [ "{{base_url}}" ],
+							"path": [ "record", "1" ]
+						}
+					}
+				},
+				{
+					"name": "Get Filtered Records",
+					"request": {
+						"method": "GET",
+						"url": {
+							"raw": "{{base_url}}/record?user_id=1&category_id=1",
+							"host": [ "{{base_url}}" ],
+							"path": [ "record" ],
+							"query": [
+								{
+									"key": "user_id",
+									"value": "1"
+								},
+								{
+									"key": "category_id",
+									"value": "1"
+								}
+							]
+						}
+					}
+				}
+			]
+		}
+	]
+}
